@@ -35,6 +35,17 @@ display:grid;
 grid-template-columns:auto auto auto auto;
 justify-content:space-between;
 gap:80px 60px;
+@media screen and (max-width:1350px){
+  grid-template-columns:auto auto auto ;
+}
+
+@media screen and (max-width:648px){
+  grid-template-columns:auto auto ;
+}
+
+@media screen and (max-width:458px){
+  grid-template-columns:auto  ;
+}
 `
 
 const MainContainer = styled.div`

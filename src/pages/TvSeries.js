@@ -6,7 +6,7 @@ import Search from '../components/Search';
 
 const TvSeries = () => {
   const {filmData} = useGlobalContext();
-  const TvSeries = filmData.filter((film) => film.category == "Tv Series")
+  const TvSeries = filmData.filter((film) => film.category === "TV Series")
   return (
   <MainContainer>
     <Search
@@ -32,6 +32,17 @@ display:grid;
 grid-template-columns:auto auto auto auto;
 justify-content:space-between;
 gap:80px 60px;
+@media screen and (max-width:1350px){
+  grid-template-columns:auto auto auto ;
+}
+
+@media screen and (max-width:648px){
+  grid-template-columns:auto auto ;
+}
+
+@media screen and (max-width:458px){
+  grid-template-columns:auto  ;
+}
 `
 
 const MainContainer = styled.div`

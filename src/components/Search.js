@@ -4,18 +4,13 @@ import styled from 'styled-components';
 import SearchIcon from '../assets/icon-search.svg'
 import { useGlobalContext } from '../Context';
 const Search = ({placeholder}) => {
-
-  const [query, setQuery] = useState('')
-
-  const search = (data) => {
-    return data.filter((item) => item.title.toLowercase().includes(query))
-  }
+  const {handleSearchFilterChange} = useGlobalContext();
 
   return (
     <InputContainer>
       <div style={{display:"flex",alignItems:"center"}}>
         <SearchIconImg src={SearchIcon} />
-        <SearchInput type="text" onChange={(e) => setQuery(e.target.value)} placeholder={placeholder}/>
+        <SearchInput type="text" onChange={handleSearchFilterChange} placeholder={placeholder}/>
       </div>
     </InputContainer>
   )
@@ -23,11 +18,14 @@ const Search = ({placeholder}) => {
 
 const InputContainer = styled.div`
 display:flex;
-width:100%;
-align-items:flex-start;
+min-width:100%;
+
 box-sizing:border-box;
 margin-bottom:30px;
-
+@media screen and (max-width: 1350px){
+  
+  margin-top:80px;
+}
 `
 
 const SearchIconImg = styled.img`
@@ -36,7 +34,7 @@ align-self:flex-start;
 `
 
 const SearchInput = styled.input`
-width:100%;
+min-width:100%;
 outline:none;
 background-color:transparent;
 border:none;

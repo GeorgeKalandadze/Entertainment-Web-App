@@ -32,6 +32,10 @@ const TrandingMovieContainer = styled.div`
   min-width:470px;
   position:relative;
   border-radius: 8px;
+  @media screen and (max-width:648px){
+    height:150px;
+    min-width:270px;
+}
   
 `
 

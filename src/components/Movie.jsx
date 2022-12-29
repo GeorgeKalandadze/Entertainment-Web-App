@@ -26,10 +26,25 @@ const Movie = ({title,year,category,thumbnail,rating,isBookmarked}) => {
 export default Movie
 
 const MovieContiner = styled.div`
-width: 280px;
+min-width: 280px;
 height: 174px;
 border-radius: 8px;
 position:relative;
+
+@media screen and (max-width:998px){
+  min-width: 220px;
+  height: 144px;
+}
+
+@media screen and (max-width:768px){
+  height: 100px;
+}
+
+@media screen and (max-width:458px){
+  min-width:100%;
+  height: 130px;
+}
+
 `
 
 const Img = styled.img`
@@ -58,8 +73,8 @@ opacity: 70%;
 const Bookmark = styled.div`
 display:flex;
 position:absolute;
-margin-top:-210px;
-margin-left:220px;
+top:20px;
+right:20px;
 cursor: pointer;
 width:32px;
 height:32px;
@@ -68,4 +83,6 @@ border-radius:50%;
 align-items: center;
 justify-content: center;
 opacity:50%;
+
+
 `

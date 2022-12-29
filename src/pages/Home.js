@@ -33,6 +33,14 @@ const HomeContainer = styled.div`
   width:100%;
   padding:25px;
   overflow:hidden;
+
+  @media screen and (max-width:768px){
+  padding:10px;
+}
+
+@media screen and (max-width:458px){
+  padding:5px;
+}
 `
 
 const RecomendedText = styled.h1`
@@ -56,6 +64,15 @@ grid-row-gap:90px;
 
 @media screen and (max-width:1350px){
   grid-template-columns:auto auto auto ;
+}
+
+@media screen and (max-width:648px){
+  grid-template-columns:auto auto ;
+}
+
+@media screen and (max-width:458px){
+  justify-content:center;
+  grid-template-columns:auto ;
 }
 `
 

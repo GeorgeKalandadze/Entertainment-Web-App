@@ -41,6 +41,17 @@ const MainContainer = styled.div`
 width:100%;
 padding:25px;
 overflow:hidden;
+@media screen and (max-width:1350px){
+  grid-template-columns:auto auto auto ;
+}
+
+@media screen and (max-width:648px){
+  grid-template-columns:auto auto ;
+}
+
+@media screen and (max-width:458px){
+  grid-template-columns:auto  ;
+}
 `
 
 const Text = styled.h2`

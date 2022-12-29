@@ -32,7 +32,7 @@ export default Navbar
 const Container = styled.div`
 padding:25px;
 box-sizing:border-box;
-max-width:7%;
+width:7%;
 height:100vh;
 background:#161D2F;
 border-radius:20px;
@@ -41,8 +41,19 @@ flex-direction:column;
 align-items:center;
 justify-content:space-between;
 
-@media screen and (max-width: 1300px){
- 
+@media screen and (max-width: 1350px){
+  position: fixed;
+  top: 0;
+  left:0;
+  right:20px;
+  z-index: 10;
+  width: 100%;
+  height: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction:row;
+  
 }
 
   
@@ -53,13 +64,30 @@ gap:24px;
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-self:flex-start
+justify-self:flex-start;
+
+@media screen and (max-width: 1350px){
+flex-direction:row;
+display:flex;
+align-items:center;
+justify-self:flex-start;
+gap:54px;
+}
 `
 
 const AvatarImg = styled.img`
 width:40px;
-height:40px
+height:40px;
+
+@media screen and (max-width:768px){
+  width:34px;
+  height:34px;
+}
 `
+
+const StyledLink = styled(Link)`
+ 
+`;
 
 
 
