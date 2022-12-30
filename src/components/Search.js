@@ -4,13 +4,18 @@ import styled from 'styled-components';
 import SearchIcon from '../assets/icon-search.svg'
 import { useGlobalContext } from '../Context';
 const Search = ({placeholder}) => {
-  const {handleSearchFilterChange} = useGlobalContext();
+  const {handleSearchFilterChange,searchFilter} = useGlobalContext();
 
   return (
     <InputContainer>
       <div style={{display:"flex",alignItems:"center"}}>
-        <SearchIconImg src={SearchIcon} />
-        <SearchInput type="text" onChange={handleSearchFilterChange} placeholder={placeholder}/>
+        <SearchIconImg src={SearchIcon}/>
+        <SearchInput 
+          type="text" 
+          onChange={handleSearchFilterChange} 
+          placeholder={placeholder}
+          value={searchFilter}
+        />
       </div>
     </InputContainer>
   )

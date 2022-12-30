@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import Search from '../components/Search';
 
 const Bookmarked = () => {
-  const {filmData} = useGlobalContext();
+  const {filmData,searchFilter} = useGlobalContext();
   const BookmarkedMovies = filmData.filter((movie) => movie.isBookmarked)
-  
+  const filteredMovies = BookmarkedMovies.filter((item) => item.title.toLowerCase().includes(searchFilter));
   
 
   return (
@@ -18,7 +18,7 @@ const Bookmarked = () => {
     <Text>Movies</Text>
     <MoviesCont>
       {
-        BookmarkedMovies.map((movie,index) => {
+        filteredMovies.map((movie,index) => {
           return <Movie key={index} {...movie}/>
         })
       }

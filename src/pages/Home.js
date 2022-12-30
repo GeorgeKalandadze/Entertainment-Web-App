@@ -6,7 +6,8 @@ import { useGlobalContext } from '../Context';
 import Movie from '../components/Movie';
 
 const Home = () => {
-  const {filmData} = useGlobalContext();
+  const {filmData,searchFilter} = useGlobalContext();
+  const filteredMovies = filmData.filter((item) => item.title.toLowerCase().includes(searchFilter));
   return (
       <HomeContainer>
         <Search
@@ -16,7 +17,7 @@ const Home = () => {
         <RecomendedText>Recomended for you</RecomendedText>
         <MoviesCont>
           {
-            filmData.map((film,index) => {
+            filteredMovies.map((film,index) => {
               return <Movie key={index} {...film} index={index}/>
             })
           }

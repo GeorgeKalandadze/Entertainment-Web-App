@@ -5,8 +5,10 @@ import styled from 'styled-components';
 import Search from '../components/Search';
 
 const TvSeries = () => {
-  const {filmData} = useGlobalContext();
+  const {filmData,searchFilter} = useGlobalContext();
   const TvSeries = filmData.filter((film) => film.category === "TV Series")
+  const filteredMovies = TvSeries.filter((item) => item.title.toLowerCase().includes(searchFilter));
+
   return (
   <MainContainer>
     <Search
@@ -15,7 +17,7 @@ const TvSeries = () => {
     <Text>Tv series</Text>
     <TvSeriesCont>
       {
-        TvSeries.map((tvSeries,index) => {
+        filteredMovies.map((tvSeries,index) => {
           return <Movie key={index} {...tvSeries}/>
         })
       }
